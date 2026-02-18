@@ -1,4 +1,9 @@
 
+import os
+# Ensure CPU runtime and protobuf python fallback
+os.environ['CUDA_VISIBLE_DEVICES'] = ''
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 # import the necessary packages
 from tensorflow.keras.models import load_model, save_model
 import argparse

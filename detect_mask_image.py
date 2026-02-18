@@ -1,6 +1,11 @@
 # USAGE
 # python detect_mask_image.py --image images/pic1.jpeg
 
+import os
+# Ensure CPU runtime and protobuf python fallback
+os.environ['CUDA_VISIBLE_DEVICES'] = ''
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 # import the necessary packages
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
